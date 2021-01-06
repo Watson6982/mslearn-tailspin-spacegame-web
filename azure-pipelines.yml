@@ -1,22 +1,15 @@
-<<<<<<< HEAD
-=======
 # ASP.NET Core
 # Build and test ASP.NET Core projects targeting .NET Core.
 # Add steps that run tests, create a NuGet package, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
 
->>>>>>> f0fbdd1edb896bf541cb1a7baefe2d3b8c3a46f5
 trigger:
 - '*'
 
 pool:
   vmImage: 'ubuntu-18.04'
   demands:
-<<<<<<< HEAD
-  - npm
-=======
     - npm
->>>>>>> f0fbdd1edb896bf541cb1a7baefe2d3b8c3a46f5
 
 variables:
   buildConfiguration: 'Release'
@@ -61,12 +54,12 @@ steps:
 - task: WhiteSource Bolt@20
   displayName: 'Run WhiteSource Bolt'
   condition: |
-  and
-  (
-    succeeded(),
-    eq(variables['Build.Reason'], 'PullRequest'),
-    eq(variables['System.PullRequest.TargetBranch'], 'master')
-  )
+    and
+    (
+      succeeded(),
+      eq(variables['Build.Reason'], 'PullRequest'),
+      eq(variables['System.PullRequest.TargetBranch'], 'master')
+    )
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: drop'
