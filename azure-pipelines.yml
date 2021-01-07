@@ -57,7 +57,6 @@ steps:
     and
     (
       succeeded(),
-      eq(variables['Build.Reason'], 'PullRequest'),
       eq(variables['System.PullRequest.TargetBranch'], 'scan-open-source')
     )
 
