@@ -58,7 +58,7 @@ steps:
     (
       succeeded(),
       eq(variables['Build.Reason'], 'PullRequest'),
-      eq(variables['System.PullRequest.TargetBranch'], 'master')
+      eq(variables['System.PullRequest.TargetBranch'], 'scan-open-source')
     )
 
 - task: PublishBuildArtifacts@1
